@@ -6,4 +6,4 @@ Criar projeto maven (webapp), com o nome CoronaTecRest, onde, após a criação 
  - Criar o DAO de Cliente com as funcionalidades
  
  
-![tenor](https://tenor.com/view/gif-20070200)
+![tenor](https://apps.apple.com/app/apple-store/id917932200?pt=39040802&ct=Media1GIFV2&mt=8)
