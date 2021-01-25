@@ -4,8 +4,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -23,10 +21,6 @@ public class Contato {
 	@Column(name = "TELEFONE", nullable = false)
 	private String telefone;
 	
-	@OneToOne
-	@Column(name = "ID_CLIENTE")
-	private Cliente cliente;
-
 //get set				
 	public int getIdContato() {
 		return idContato;
@@ -52,11 +46,4 @@ public class Contato {
 		this.telefone = telefone;
 	}
 
-	public Cliente getCliente() {
-		return cliente;
-	}
-
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
-	}
 }
