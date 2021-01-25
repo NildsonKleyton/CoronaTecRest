@@ -24,11 +24,11 @@ public class TesteConexao {
 		ent.persist(c);
 		
 		
-		Contato cont = new Contato();
-		cont.setEmail("teste@teste.com");
-		cont.setTelefone("(81) 98877-6655");
-
-		ent.persist(cont);
+//		Contato cont = new Contato();
+//		cont.setEmail("teste@teste.com");
+//		cont.setTelefone("(81) 98877-6655");
+//
+//		ent.persist(cont);
 		
 		t.commit();
 		ent.close();
