@@ -13,10 +13,10 @@ import javax.persistence.Table;
 public class Contato {
 //atributos
 	@Id
-	@Column(name = "ID_CONTATO", nullable = false)
+	@Column(name = "ID", nullable = false)
 	@GeneratedValue(generator = "S_CONTATO")
 	@SequenceGenerator(name = "S_CONTATO", sequenceName = "S_CONTATO", allocationSize = 1)
-	private int idContato;
+	private int id;
 	@Column(name = "EMAIL", nullable = false)
 	private String email;
 	@Column(name = "TELEFONE", nullable = false)
@@ -26,12 +26,12 @@ public class Contato {
 	private int CPFCliente;
 	
 //get set				
-	public int getIdContato() {
-		return idContato;
+	public int getId() {
+		return id;
 	}
 
-	public void setIdContato(int idContato) {
-		this.idContato = idContato;
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getEmail() {

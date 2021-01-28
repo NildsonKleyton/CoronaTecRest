@@ -13,6 +13,13 @@ import entidade.RetornoCalculadora;
 public class Calculadora {
 
 	@GET
+	@Path("/")
+	@Produces(MediaType.APPLICATION_JSON)
+	public String Ola() {
+		return "Testando";
+	}
+	
+	@GET
 	@Path("/somar")
 	@Produces(MediaType.APPLICATION_JSON)
 	public RetornoCalculadora somar(@QueryParam("valor1") double valor1, @QueryParam("valor2") double valor2) {

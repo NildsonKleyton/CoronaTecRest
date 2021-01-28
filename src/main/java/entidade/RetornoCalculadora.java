@@ -1,9 +1,13 @@
 package entidade;
 
+//import javax.xml.bind.annotation.XmlRootElement;
+/*
+ *  @XmlRootElement 
+ *  retotrnao um objeto
+ */
+//@XmlRootElement 
 public class RetornoCalculadora {
-	/**
-	 * não foi usado boolean 
-	 */
+	
 	private int codigoRetrono;//0-Sucesso 1-Falha
 	private String mensagemRetorno;
 	private double valorRetorno;
