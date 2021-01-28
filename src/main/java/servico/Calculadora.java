@@ -24,7 +24,7 @@ public class Calculadora {
 	@Produces(MediaType.APPLICATION_JSON)
 	public RetornoCalculadora somar(@QueryParam("valor1") double valor1, @QueryParam("valor2") double valor2) {
 		RetornoCalculadora retorno = new RetornoCalculadora();
-		retorno.setCodigoRetrono(0);
+		retorno.setCodigoRetorno(0);
 		retorno.setValorRetorno(valor1 + valor2);
 		retorno.setMensagemRetorno("Sucesso!!");
 		return retorno;
@@ -35,7 +35,7 @@ public class Calculadora {
 	@Produces(MediaType.APPLICATION_JSON)
 	public RetornoCalculadora subtrair(@QueryParam("valor1") double valor1, @QueryParam("valor2") double valor2) {
 		RetornoCalculadora retorno = new RetornoCalculadora();
-		retorno.setCodigoRetrono(0);
+		retorno.setCodigoRetorno(0);
 		retorno.setValorRetorno(valor1 - valor2);
 		retorno.setMensagemRetorno("Sucesso!!");
 		return retorno;
@@ -46,7 +46,7 @@ public class Calculadora {
 	@Produces(MediaType.APPLICATION_JSON)
 	public RetornoCalculadora multiplicar(@QueryParam("valor1") double valor1, @QueryParam("valor2") double valor2) {
 		RetornoCalculadora retorno = new RetornoCalculadora();
-		retorno.setCodigoRetrono(0);
+		retorno.setCodigoRetorno(0);
 		retorno.setValorRetorno(valor1 * valor2);
 		retorno.setMensagemRetorno("Sucesso!!");
 		return retorno;
@@ -58,11 +58,11 @@ public class Calculadora {
 	public RetornoCalculadora dividir(@QueryParam("valor1") double valor1, @QueryParam("valor2") double valor2) {
 		RetornoCalculadora retorno = new RetornoCalculadora();
 		if (valor2 != 0) {
-			retorno.setCodigoRetrono(0);
+			retorno.setCodigoRetorno(0);
 			retorno.setMensagemRetorno("Sucesso!!");
 			retorno.setValorRetorno(valor1 / valor2);
 		} else {
-			retorno.setCodigoRetrono(1);
+			retorno.setCodigoRetorno(1);
 			retorno.setMensagemRetorno("Erro Dividendo nÃ£o pode ser igual a ZERO!!");
 		}
 		return retorno;

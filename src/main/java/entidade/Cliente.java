@@ -3,9 +3,11 @@ package entidade;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -23,7 +25,9 @@ public class Cliente {
 	private String interesses;
 	@Column(name = "IDADE", nullable = false)
 	private int idade;
-	private List<Contato> contato;
+	
+	@OneToMany (mappedBy = "cliente", cascade = CascadeType.ALL)
+	private List<Contato> listaClientes;
 	
 //get set 	
 	public String getNome() {
@@ -66,14 +70,12 @@ public class Cliente {
 		this.idade = idade;
 	}
 
-	public List<Contato> getContato() {
-		return contato;
+	public List<Contato> getListaContatos() {
+		return listaClientes;
 	}
 
-	public void setContato(List<Contato> contato) {
-		this.contato = contato;
+	public void setListaContatos(List<Contato> listaClientes) {
+		this.listaClientes = listaClientes;
 	}
-
-
 	
 }

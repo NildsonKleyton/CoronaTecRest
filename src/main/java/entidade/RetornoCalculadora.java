@@ -8,16 +8,16 @@ package entidade;
 //@XmlRootElement 
 public class RetornoCalculadora {
 	
-	private int codigoRetrono;//0-Sucesso 1-Falha
+	private int codigoRetorno;//0-Sucesso 1-Falha
 	private String mensagemRetorno;
 	private double valorRetorno;
 	
 	
-	public int getCodigoRetrono() {
-		return codigoRetrono;
+	public int getCodigoRetorno() {
+		return codigoRetorno;
 	}
-	public void setCodigoRetrono(int codigoRetrono) {
-		this.codigoRetrono = codigoRetrono;
+	public void setCodigoRetorno(int codigoRetorno) {
+		this.codigoRetorno = codigoRetorno;
 	}
 	public String getMensagemRetorno() {
 		return mensagemRetorno;

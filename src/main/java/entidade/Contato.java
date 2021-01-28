@@ -4,6 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
@@ -21,9 +22,10 @@ public class Contato {
 	private String email;
 	@Column(name = "TELEFONE", nullable = false)
 	private String telefone;
+	
 	@ManyToOne
-	@Column(name = "CPF_CLIENTE", nullable = false)
-	private int CPFCliente;
+	@JoinColumn(name = "CPF_CLIENTE", referencedColumnName = "CPF" ,nullable = false )
+	private Cliente cliente;
 	
 //get set				
 	public int getId() {
@@ -50,12 +52,13 @@ public class Contato {
 		this.telefone = telefone;
 	}
 
-	public int getCPFCliente() {
-		return CPFCliente;
+	public Cliente getCliente() {
+		return cliente;
 	}
 
-	public void setCPFCliente(int cPFCliente) {
-		CPFCliente = cPFCliente;
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
 	}
+
 
 }
