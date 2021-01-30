@@ -119,12 +119,10 @@ public class ClienteServico {
 			if (cliente.getListaContatos() != null && cliente.getListaContatos().size() > 0) {
 				// 3 - Verifica se existe contato
 				for (Contato contato : cliente.getListaContatos()) {
-					//cria variável "index" para receber o contato
+					//cria variável "index" para receber o contato e verifica se é igual
 					int index = clienteBase.getListaContatos().indexOf(contato);
-					if (index != -1) {
 						//remove o contato
 						clienteBase.getListaContatos().remove(index);
-					}
 				}
 
 			} else {
