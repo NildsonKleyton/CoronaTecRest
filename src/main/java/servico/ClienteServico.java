@@ -125,7 +125,7 @@ public class ClienteServico {
 
 			} else {
 				retorno.setCodigoRetorno(1);
-				retorno.setMensagemRetorno("FALHA: Contato já existente!!!");
+				retorno.setMensagemRetorno("FALHA: Contato não existente!!!");
 			}
 
 		} else {
