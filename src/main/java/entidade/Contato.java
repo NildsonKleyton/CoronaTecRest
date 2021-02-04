@@ -2,6 +2,7 @@ package entidade;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -23,7 +24,7 @@ public class Contato {
 	@Column(name = "TELEFONE", nullable = false)
 	private String telefone;
 	
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "CPF_CLIENTE", referencedColumnName = "CPF" ,nullable = false )
 	private Cliente cliente;
 	
