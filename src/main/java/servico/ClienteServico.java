@@ -7,6 +7,7 @@ import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
 import dao.ClienteDAOImpl;
@@ -57,11 +58,26 @@ public class ClienteServico {
 	@Path("/pesquisarCliente")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
-	public RetornoCliente pesquisarCliente(Cliente cliente) {
+	public RetornoCliente pesquisarCliente(@QueryParam("cpf") String cpf) {
 		RetornoCliente retorno = new RetornoCliente();
 		retorno.setCodigoRetorno(0);
-		retorno.setMensagemRetorno("Sucesso!!");
+		retorno.setMensagemRetorno("SUCESSO!!!");
+		
+		Cliente cliente = new Cliente();
+		cliente.setCpf(cpf);
+		
 		retorno.setListaCliente(clienteDAO.pesquisarCliente(cliente));
+		
+		if(retorno.getListaCliente() != null && retorno.getListaCliente().size() > 0) {
+			for (Cliente c : retorno.getListaCliente()) {
+				if(c.getListaContatos() != null && c.getListaContatos().size() > 0) {
+					for (Contato contato : c.getListaContatos()) {
+						contato.setCliente(null);
+					}
+				}
+			}
+		}
+		
 		return retorno;
 	}
 

@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-    xmlns:h="http://java.sun.com/jsf/html"
-    xmlns:f="http://java.sun.com/jsf/core"
-    xmlns:p="http://primefaces.org/ui">
-    
-    <h:head>
-    </h:head>
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
 
-    <h:body>
-        <h1> FIM </h1>
-    </h:body>
+<h:head>
+</h:head>
+
+<h:body>
+	<h:form enctype="multipart/form-data">
+		<p:fileUpload value="#{fileUploadView.file}" mode="simple"
+			skinSimple="true" />
+
+		<p:commandButton value="Importar" ajax="false"
+			action="#{fileUploadView.upload}"
+			styleClass="p-mt-3 ui-button-outlined p-d-block" />
+	</h:form>
+</h:body>
 </html>
